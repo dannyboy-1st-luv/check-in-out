@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Timers</h1>
+
+<table class = "table">
+  <thead class="thead-dark">
+    <tr>
+      <th>Date</th>
+      <th>Time in</th>
+      <th>Time out</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @timers.each do |timer| %>
+      <tr>
+        <td><%= timer.time_in.strftime("%A, %e %B %Y") %></td>
+        <td><%= timer.time_in.strftime("%I:%M%p") %></td>
+        <td><%= timer.time_out.strftime("%I:%M%p") if timer.time_out %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
